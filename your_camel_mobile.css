@@ -21,7 +21,7 @@ span#copyright{
 	vertical-align: middle;
 	float: none;
 	color: #777777;
-	font-size: 24px;
+	font-size: 36px;
 	height: 30px;
 	margin: 30px auto 30px auto;
 }
@@ -38,8 +38,8 @@ ul{
 li.link_popup{
 	display: block;
 	padding: 5px 20px;
-	font-size: 28px;
-	line-height: 50px;
+	font-size: 42px;
+	line-height: 70px;
 	font-weight: 600px;
 	color: #777777;
 	cursor: pointer;
