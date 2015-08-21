@@ -57,3 +57,28 @@ a{
 a:hover{
 	color: #c76e06;
 }
+
+h1{
+	font-size: 54px !important;
+}
+
+h2{
+	font-size: 72px !important;
+}
+
+h4{
+	font-size: 42px !important;
+}
+
+.arrow{
+	background-size: 112px 40px !important;
+	height: 40px !important;
+	width: 112px !important;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: "FlipV";
+  margin-left: -84px;
+}

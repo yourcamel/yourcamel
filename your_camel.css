@@ -20,21 +20,26 @@ div.background{
 	width: 100%;
 }
 
-.background:after{
-	content: "";
+.arrow{
 	position: fixed;
 	background: url(images/down_arrow.png);
 	background-size: 56px 20px;
+	background-repeat: no-repeat;
+	background-position: center;
 	height: 20px;
 	width: 56px;
   left: 50%;
-  bottom: 20px;
-  margin-left: -28px;
+  bottom: 0px;
+  padding: 20px 28px;
+  -ms-transform: translateX(-50%); /* IE 9 */
+  -webkit-transform: translateX(-50%); /* Chrome, Safari, Opera */
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 11;
 }
 
 video{
 	position: fixed;
-	margin-top: 20px;
 	height: 100%;
 	width: 100%;
 }
@@ -58,6 +63,7 @@ div.hero_box{
   text-align: center;
   padding: 10px 0 50px 0;
   top: 0;
+  z-index: 10;
 }
 
 div.hero_box:before {
@@ -225,6 +231,10 @@ li.link_popup{
 
 li:hover{
 	color: #c76e06;
+}
+
+.active{
+	color: #c76e06 !important;
 }
 
 a{
