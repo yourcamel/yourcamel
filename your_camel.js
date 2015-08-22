@@ -3,7 +3,7 @@ $(document).ready(
   	//FAQ Popup
 	  $("#faq_trigger").click(function () {
 	      $("#faq_pop").show();
-	      
+
 	      $('body').css('overflow', 'hidden');
 	      $("#faq_trigger").addClass('active');
 	      $('body').css('overflow', 'hidden');
@@ -58,15 +58,6 @@ if( /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 $(window).bind('scroll', function(){
 
 	var offset = $(document).scrollTop()
-	,	opacity = 0, blur = 0.001, moz_opacity;
-
-	  if( offset <= Start ){
-        opacity = 0;
-        blur = 0.001;
-    }else if( offset <= End ){
-        opacity = -1 + offset / (End/2);
-        blur =  14*(offset / End);
-    } else{
 	, zdex = -1,	opacity = 0, blur = 0.001, moz_opacity;
 
 	  if( offset <= Start ){
@@ -109,7 +100,6 @@ var isFirefox = typeof InstallTrigger !== 'undefined';
 	        moz_hero = 1
 	    }
 
-	  console.log(moz_opacity);
 	  hero.css('opacity', moz_hero);
 	  background.css('opacity', moz_opacity);
 	})
@@ -129,8 +119,6 @@ $('.arrow').click(function(){
   var WH = $(window).height();  
   var SH = $('body')[0].scrollHeight;
   $('html, body').stop().animate({scrollTop: SH-WH}, 200);
-
-  console.log( SH+' '+WH ); // TEST
 
 }); 
 
