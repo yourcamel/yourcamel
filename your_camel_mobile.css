@@ -84,5 +84,5 @@ h4{
 }
 
 .send-sonar-button{
-	bottom: 35%;
+	bottom: 35% !important;
 }
