@@ -3,25 +3,43 @@ $(document).ready(
   	//FAQ Popup
 	  $("#faq_trigger").click(function () {
 	      $("#faq_pop").show();
+	      
 	      $('body').css('overflow', 'hidden');
+	      $("#faq_trigger").addClass('active');
+	      $('body').css('overflow', 'hidden');
+
+	      $("#terms_pop").hide();
+	      $("#terms_trigger").removeClass('active');
+	      $('body').css('overflow', 'visible');
+
 	      if( /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 					window.scrollTo(0, 0);
 				}
 	  });
 	  $("#exit_faq").click(function () {
 	      $("#faq_pop").hide();
+	      $("#faq_trigger").removeClass('active');
 	      $('body').css('overflow', 'visible');
 	  });
 	  //Terms Popup
 	  $("#terms_trigger").click(function () {
 	      $("#terms_pop").show();
+
 	      $('body').css('overflow', 'hidden');
+	      $("#terms_trigger").addClass('active');
+	      $('body').css('overflow', 'hidden');
+
+	      $("#faq_pop").hide();
+	      $("#faq_trigger").removeClass('active');
+	      $('body').css('overflow', 'visible');
+
 	      if( /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 					window.scrollTo(0, 0);
 				}
 	  });
 	  $("#exit_terms").click(function () {
 	      $("#terms_pop").hide();
+	      $("#terms_trigger").removeClass('active');
 	      $('body').css('overflow', 'visible');
 	  });
 });
@@ -49,11 +67,24 @@ $(window).bind('scroll', function(){
         opacity = -1 + offset / (End/2);
         blur =  14*(offset / End);
     } else{
+	, zdex = -1,	opacity = 0, blur = 0.001, moz_opacity;
+
+	  if( offset <= Start ){
+	 			zdex = -1;
+        opacity = 0;
+        blur = 0.001;
+    }else if( offset <= End ){
+    		zdex = 1;
+        opacity = -1 + offset / (End/2);
+        blur =  14*(offset / End);
+    } else{
+    		zdex = 1;
         opacity = 1;
         blur = 14;
     }
 
   hero.css('opacity', opacity);
+  hero.css('z-index', zdex);
   background.css({'-webkit-filter': 'blur('+blur+'px)'});
   background.css('opacity', moz_opacity);
 })
@@ -93,6 +124,14 @@ $(window).ready(function(){
 });
   
 
+$('.arrow').click(function(){
 
+  var WH = $(window).height();  
+  var SH = $('body')[0].scrollHeight;
+  $('html, body').stop().animate({scrollTop: SH-WH}, 200);
+
+  console.log( SH+' '+WH ); // TEST
+
+}); 
 
 
