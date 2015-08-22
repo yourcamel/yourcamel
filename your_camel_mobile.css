@@ -10,7 +10,7 @@ div.footer{
 	height: auto;
 	width: 100%;
 	text-align: center;
-	bottom: 100px;
+	bottom: -3px;
 	z-index: 103;
 	overflow: scroll;
 }
@@ -81,5 +81,8 @@ h4{
   filter: FlipV;
   -ms-filter: "FlipV";
   margin-left: -84px;
-  bottom: 120px;
+}
+
+.send-sonar-button{
+	bottom: 35%;
 }
