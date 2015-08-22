@@ -10,7 +10,7 @@ div.footer{
 	height: auto;
 	width: 100%;
 	text-align: center;
-	bottom: -3px;
+	bottom: 100px;
 	z-index: 103;
 	overflow: scroll;
 }
@@ -81,4 +81,5 @@ h4{
   filter: FlipV;
   -ms-filter: "FlipV";
   margin-left: -84px;
+  bottom: 120px;
 }
