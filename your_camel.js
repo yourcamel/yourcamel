@@ -95,8 +95,7 @@ var isFirefox = typeof InstallTrigger !== 'undefined';
 	        moz_opacity = 0
 	        moz_hero = 1
 	    }
-
-	  console.log(moz_opacity);
+	    
 	  hero.css('opacity', moz_hero);
 	  background.css('opacity', moz_opacity);
 	})
@@ -116,8 +115,6 @@ $('.arrow').click(function(){
   var WH = $(window).height();  
   var SH = $('body')[0].scrollHeight;
   $('html, body').stop().animate({scrollTop: SH-WH}, 200);
-
-  console.log( SH+' '+WH ); // TEST
 
 }); 
 
