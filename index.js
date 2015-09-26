@@ -6,4 +6,4 @@ app.get("/", function(req, res) {
 });
 
 app.use(express.static(__dirname + "/public"));
-app.listen(process.env.PORT | 8080);
+app.listen(process.env.PORT || 8080);
