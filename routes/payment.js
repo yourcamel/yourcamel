@@ -17,11 +17,6 @@ router.post("/register", function(req, res) {
     var expMonth = req.body.expMonth;
     var expYear = req.body.expYear;
 
-    console.log(cvc);
-    console.log(number);
-    console.log(expMonth);
-    console.log(expYear);
-
     res.end();
 });
 
