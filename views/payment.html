@@ -12,32 +12,29 @@
 
     <body>
 
-        <form action="" method="POST">
-          <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9"
-            data-amount="2000"
-            data-name="Your Camel"
-            data-description="Your Order"
-            data-image="/images/camel_logo.png"
-            data-locale="auto">
-          </script>
-        </form>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
 
-        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        <script>
+            var handler = StripeCheckout.configure({
+              key: 'pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9',
+                image: 'favicons/android-chrome-72x72.png',
+                locale: 'auto',
+                token: function(token) {
 
-        <script type="text/javascript">
-            Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+                }
+            });
 
-            // Stripe.card.createToken( {
-            //     number: $('.card-number').val(),
-            //     cvc: $('.card-cvc').val(),
-            //     exp_month: $('.card-expiry-month').val(),
-            //     exp_year: $('.card-expiry-year').val()
-            // }, function(status, response) {
-            //
-            // });
+            handler.open({
+                name: 'Your Camel',
+                description: 'Your Order',
+                amount: 2000
+            });
 
+            // Close Checkout on page navigation
+            $(window).on('popstate', function() {
+                handler.close();
+            });
         </script>
+
     </body>
 </html>
