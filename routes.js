@@ -9,6 +9,5 @@ module.exports = function(express) {
         res.sendFile(__dirname + "/views/payment.html");
     });
 
-
     return router;
 };
