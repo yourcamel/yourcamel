@@ -21,7 +21,7 @@ router.post("/register", function(req, res) {
 });
 
 router.get("/register", function(req, res) {
-    res.sendFile(path.join(__dirname, '../', 'views/payment.html'));
+    res.sendFile(path.join(__dirname, '../', 'views/register.html'));
 });
 
 router.get("/pay", function(req, res) {
