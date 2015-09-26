@@ -2,22 +2,13 @@ var customer = require("../customer.js");
 var router = require('express').Router();
 var path = require('path');
 
-router.get("/", function(req, res) {
-    var token = req.body.token;
-    var email = req.body.email;
-
-    customer.createCustomer(token, email);
-
-    res.redirect("../");
-});
-
 router.post("/register", function(req, res) {
     var cvc = req.body.cvc;
     var number = req.body.number;
     var expMonth = req.body.expMonth;
     var expYear = req.body.expYear;
 
-    res.end();
+    res.redirect("https://yourcamel.herokuapp.com");
 });
 
 router.get("/register", function(req, res) {
