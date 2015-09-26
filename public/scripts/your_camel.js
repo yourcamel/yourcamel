@@ -1,5 +1,5 @@
 $(document).ready(
-  function(){
+  function() {
   	//FAQ Popup
 	  $("#faq_trigger").click(function () {
 	      $("#faq_pop").show();
@@ -112,14 +112,12 @@ $(window).ready(function(){
         hero.css("display", 'inline-block');
     });
 });
-  
+
 
 $('.arrow').click(function(){
 
-  var WH = $(window).height();  
+  var WH = $(window).height();
   var SH = $('body')[0].scrollHeight;
   $('html, body').stop().animate({scrollTop: SH-WH}, 200);
 
-}); 
-
-
+});
