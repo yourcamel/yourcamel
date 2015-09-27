@@ -7,8 +7,11 @@ router.post("/register", function(req, res) {
     var number = req.body.number;
     var expMonth = req.body.expMonth;
     var expYear = req.body.expYear;
+    var email = req.body.email;
 
-    res.redirect("https://yourcamel.herokuapp.com");
+    customer.create(function() {
+        res.redirect("https://yourcamel.herokuapp.com");
+    }, email, cvc, number, expMonth, expYear);
 });
 
 router.get("/register", function(req, res) {
