@@ -8,7 +8,9 @@ router.post("/register", function(req, res) {
     var expMonth = req.body.expMonth;
     var expYear = req.body.expYear;
     var email = req.body.email;
-
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    
     customer.create(function() {
         res.redirect("https://yourcamel.herokuapp.com");
     }, email, cvc, number, expMonth, expYear);
