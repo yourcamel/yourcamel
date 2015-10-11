@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.post('/', function(req, res) {
+app.post('/register', function(req, res) {
 	var stripeToken = req.body.stripeToken;
 	customer.create(stripeToken);
 });
