@@ -1,10 +1,10 @@
-var stripe = require("stripe")("sk_test_kkFteL1XTrNcIZEgHxeCZfV1");
+var stripe = require("stripe")("pk_live_XPUUXHSOAay2N3hf2jpMyqry");
 
 module.exports.create = function(stripeToken) {
     stripe.customers.create({
         source: stripeToken
     }).then(function(customer) {
-        
+
     }).then(function(charge) {
     });
 };
