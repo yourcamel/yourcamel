@@ -39,7 +39,7 @@ div.mobile_logo{
   position: absolute;
   height: 164px;
   width: 200px;
-  background-image: url("images/camel_logo.png");
+  background-image: url("../images/camel_logo.png");
   background-size: 200px 164px;
   margin: -182px 0 0 -82px;
   left: 50%;
