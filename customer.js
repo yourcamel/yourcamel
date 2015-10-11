@@ -1,17 +1,15 @@
 var stripe = require("stripe")("sk_test_kkFteL1XTrNcIZEgHxeCZfV1");
 
-module.exports.create = function(callback, email, cvc, number, expMonth, expYear) {
+module.exports.create = function(stripeToken) {
     stripe.customers.create({
-          email: email,
-          source: {
-              object: "card",
-              number: number,
-              exp_month: expMonth,
-              exp_year: expYear,
-              cvc: cvc
-          }
+        source: stripeToken
     }).then(function(customer) {
-        callback();
+        return stripe.charges.create({
+            amount: 1, // amount in cents
+            currency: "usd",
+            customer: customer.id
+        });
+    }).then(function(charge) {
     });
 };
 

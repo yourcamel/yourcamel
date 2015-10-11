@@ -1,10 +1,19 @@
 var path = require('path');
 var express = require("express");
+var bodyParser = require('body-parser');
+var customer = require('./customer.js');
 var app = express();
 
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.post('/', function(req, res) {
+	var stripeToken = req.body.stripeToken;
+	customer.create(stripeToken);
+});
 
 app.get('/register', function(req, res) {
 	res.sendFile(__dirname + '/public/index.html');
