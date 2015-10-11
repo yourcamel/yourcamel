@@ -10,13 +10,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.post('/register', function(req, res) {
+app.post('/payment', function(req, res) {
 	var stripeToken = req.body.stripeToken;
 	customer.create(stripeToken);
-});
-
-app.get('/register', function(req, res) {
-	res.sendFile(__dirname + '/public/index.html');
 });
 
 app.use(function(req, res, next){
