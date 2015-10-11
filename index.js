@@ -12,7 +12,9 @@ app.use(bodyParser.json());
 
 app.post('/payment.html', function(req, res) {
 	customer.create(req.body.stripeToken);
-	res.redirect("https://yourcamel.herokuapp.com");
+	res.redirect("https://yourcamel.herokuapp.com", function() {
+		res.redirect("https://yourcamel.herokuapp.com");
+	});
 });
 
 app.use(function(req, res, next){
