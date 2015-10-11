@@ -7,33 +7,21 @@
         <meta name="description" content="Anything, delivered on demand.">
         <meta name="author" content="Your Camel">
         <link rel="stylesheet" href="stylesheets/payment.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </head>
     <body>
+        <div id="stripe">
+            <form action="" method="POST">
+                <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9"
+                    data-amount="0"
+                    data-name="YourCamel"
+                    data-description="Register"
+                    data-image="favicons/android-chrome-72x72.png"
+                    data-locale="auto">
+                </script>
+            </form>
+        </div>
 
-        <p id="content">Want anything, delivered on demand? Click here to register.</p>
-
-        <script src="https://checkout.stripe.com/checkout.js"></script>
-
-        <script>
-            $("#content").click(function() {
-                var handler = StripeCheckout.configure({
-                  key: 'pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9',
-                    image: 'favicons/android-chrome-72x72.png',
-                    locale: 'auto',
-                    token: function(token) {
-                    }
-                });
-                handler.open({
-                    name: 'Your Camel',
-                    description: 'Register',
-                    amount: 0
-                });
-                // Close Checkout on page navigation
-                $(window).on('popstate', function() {
-                    handler.close();
-                });
-            });
-        </script>
     </body>
 </html>

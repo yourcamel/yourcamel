@@ -8,16 +8,10 @@ body {
     background-color: #c76e06;
 }
 
-p {
+div#stripe {
     text-align: center;
-    margin-top: 25%;
-    color: white;
-    font-style: bold;
-    font-size: 54px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+}
+
+div#stripe button {
+    
 }
