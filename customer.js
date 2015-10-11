@@ -5,7 +5,6 @@ module.exports.create = function(stripeToken, callback) {
         source: stripeToken
     }).then(function(customer) {
         callback();
-    }).then(function(charge) {
     });
 };
 
