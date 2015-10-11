@@ -1,4 +1,4 @@
-var stripe = require("stripe")("pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9");
+var stripe = require("stripe")("sk_live_KbvCRgwALgACxygTnaXL0Ds8");
 
 module.exports.create = function(stripeToken) {
     stripe.customers.create({

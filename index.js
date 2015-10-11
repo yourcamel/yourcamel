@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.post('/payment.html', function(req, res) {
-	var stripeToken = req.body.stripeToken;
-	customer.create(stripeToken);
+	customer.create(req.body.stripeToken);
+	res.redirect("https://yourcamel.herokuapp.com");
 });
 
 app.use(function(req, res, next){
