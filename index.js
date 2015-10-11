@@ -4,7 +4,11 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/register', function(req, res) {
+	res.sendFile(__dirname + '/public/index.html');
+});
 
 app.use(function(req, res, next){
     res.status(404);
