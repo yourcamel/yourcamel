@@ -35,6 +35,17 @@ ul{
 	-webkit-padding-start: 0;
 }
 
+div.mobile_logo{
+  position: absolute;
+  height: 164px;
+  width: 200px;
+  background: url(images/camel_logo.png);
+  background-size: 200px 164px;
+  margin: -182px 0 0 -82px;
+  left: 50%;
+  z-index: 100;
+}
+
 li.link_popup{
 	display: block;
 	padding: 5px 20px;

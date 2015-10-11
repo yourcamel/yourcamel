@@ -1,5 +1,8 @@
 $(document).ready(
   function() {
+	  var mobile = /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent);
+	 
+	  
   	//FAQ Popup
 	  $("#faq_trigger").click(function () {
 	      $("#faq_pop").show();
@@ -12,9 +15,9 @@ $(document).ready(
 	      $("#terms_trigger").removeClass('active');
 	      $('body').css('overflow', 'visible');
 
-	      if( /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
+	      if(mobile){
 					window.scrollTo(0, 0);
-				}
+			}
 	  });
 	  $("#exit_faq").click(function () {
 	      $("#faq_pop").hide();
@@ -33,7 +36,7 @@ $(document).ready(
 	      $("#faq_trigger").removeClass('active');
 	      $('body').css('overflow', 'visible');
 
-	      if( /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
+	      if(mobile){
 					window.scrollTo(0, 0);
 				}
 	  });
