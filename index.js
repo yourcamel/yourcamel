@@ -2,19 +2,12 @@ var path = require('path');
 var express = require("express");
 var bodyParser = require('body-parser');
 var app = express();
-var paymentRoutes = require('./routes/payment.js');
 
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/views/your_camel.html"));
-});
-
-app.use("/payment", paymentRoutes);
 
 app.use(function(req, res, next){
     res.status(404);
