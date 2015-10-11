@@ -4,14 +4,19 @@ h1 {
     text-align: center;
 }
 
-html {
-  background: url("../images/bg.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body {
+    background-color: #c76e06;
 }
 
-div#stripe {
+p {
     text-align: center;
+    margin-top: 25%;
+    color: white;
+    font-size: 32px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
