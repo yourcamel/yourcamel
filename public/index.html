@@ -198,7 +198,6 @@
 	<div class="footer">
 		<span id="copyright">Copyright Your Camel 2015</span>
 		<ul>
-			<li id="register" class="link_popup">Register</li>
 			<li class="link_popup"><a href="https://docs.google.com/forms/d/1qIYbXrKVsrt19eVh4tJBBLAJa6df-nCLS6ZhgUX6v4k/viewform?c=0&w=1" target="_blank">Become a Camel</a></li>
 			<li class="link_popup" id='faq_trigger'>FAQ</li>
 			<li class="link_popup"><a href="mailto:contact@yourcamel.com">Contact</a></li>
@@ -209,33 +208,6 @@
 		</ul>
 	</div>
 
-	<script src="https://checkout.stripe.com/checkout.js"></script>
-
-	<script type="text/javascript">
-		$("#register").click(function() {
-			var handler = StripeCheckout.configure({
-				key: 'pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9',
-				image: 'favicons/android-chrome-72x72.png',
-				locale: 'auto',
-				token: function(token) {
-
-				}
-			});
-
-			handler.open({
-				name: 'Your Camel',
-				description: 'Register',
-				amount: 0
-			});
-
-			// Close Checkout on page navigation
-			$(window).on('popstate', function() {
-				handler.close();
-			});
-		});
-
-	</script>
-	
 	<script type="text/javascript">
     if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent))
    		$(".mobile_logo").hide();
