@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Your Camel</title>
+        <meta name="description" content="Anything, delivered on demand.">
+        <meta name="author" content="Your Camel">
+        <link rel="stylesheet" href="stylesheets/payment.css"/>
+    </head>
+    <body>
+
+        <h1>Your Camel</h1>
+
+
+        <div id="stripe">
+            <form action="" method="POST">
+                <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_Q6VYCrGf0Bjh89cUzy0cYUu9"
+                    data-amount="0"
+                    data-name="YourCamel"
+                    data-description="Register"
+                    data-image="images/camel_logo.png"
+                    data-locale="auto">
+                </script>
+            </form>
+        </div>
+
+    </body>
+</html>
