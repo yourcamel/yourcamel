@@ -6,15 +6,6 @@ var app = express();
 var fs = require('fs');
 var https = require('https');
 
-var server = https.createServer({
-    key: fs.readFileSync('./www_yourcamel_com.key'),
-    certificate: fs.readFileSync('./yourcamel.crt'),
-    ca: [fs.readFileSync('./gdb1.crt'), fs.readFileSync('./gdb2.crt'), fs.readFileSync(__dirname + '/gdb3.crt')]
-}, app);
-
-
-server.listen(process.env.PORT || 443);
-
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -31,3 +22,10 @@ app.use(function(req, res, next){
     res.status(404);
     res.render('404', { url: req.url });
 });
+
+
+https.createServer({
+    key: fs.readFileSync('www_yourcamel_com.key'),
+    cert: fs.readFileSync('yourcamel.crt'),
+    ca: [fs.readFileSync('gd_bundle-g2-g1.crt')]
+}, app).listen(443);
