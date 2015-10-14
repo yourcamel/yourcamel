@@ -28,4 +28,4 @@ https.createServer({
     key: fs.readFileSync('www_yourcamel_com.key'),
     cert: fs.readFileSync('yourcamel.crt'),
     ca: [fs.readFileSync('gd_bundle-g2-g1.crt')]
-}, app).listen(process.env.PORT || 443);
+}, app).listen(process.env.PORT || 8080);
