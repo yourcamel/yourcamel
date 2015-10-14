@@ -7,9 +7,9 @@ var fs = require('fs');
 var https = require('https');
 
 var server = https.createServer({
-    key: fs.readFileSync('./ssl/www_yourcamel_com.key'),
-    certificate: fs.readFileSync('./ssl/yourcamel.crt'),
-    ca: [fs.readFileSync('./ssl/gdb1.crt'), fs.readFileSync('./ssl/gdb2.crt'), fs.readFileSync('./ssl/gdb3.crt')]
+    key: fs.readFileSync(__dirname + '/ssl/www_yourcamel_com.key'),
+    certificate: fs.readFileSync(__dirname + '/ssl/yourcamel.crt'),
+    ca: [fs.readFileSync(__dirname + '/ssl/gdb1.crt'), fs.readFileSync(__dirname + '/ssl/gdb2.crt'), fs.readFileSync(__dirname + '/ssl/gdb3.crt')]
 }, app);
 
 
