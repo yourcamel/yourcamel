@@ -3,8 +3,6 @@ var express = require("express");
 var bodyParser = require('body-parser');
 var customer = require('./customer.js');
 var app = express();
-var fs = require('fs');
-var https = require('https');
 
 app.set('view engine', 'ejs');
 
@@ -23,9 +21,4 @@ app.use(function(req, res, next){
     res.render('404', { url: req.url });
 });
 
-
-https.createServer({
-    key: fs.readFileSync('www_yourcamel_com.key'),
-    cert: fs.readFileSync('yourcamel.crt'),
-    ca: [fs.readFileSync('gd_bundle-g2-g1.crt')]
-}, app).listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080);
